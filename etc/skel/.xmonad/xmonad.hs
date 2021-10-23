@@ -10,7 +10,6 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
 import XMonad.Layout.Gaps
 
-import Graphics.X11.ExtraTypes.XF86
 import System.Exit
 import Control.Monad
 import Data.Monoid
@@ -20,40 +19,39 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 -- ## Startup hook ## ---------------------------------------------------------------
-myStartupHook = do
-	spawn "bash ~/.xmonad/bin/autostart.sh"
+myStartupHook = do spawn "bash ~/.xmonad/bin/autostart.sh"
 
 -- ## Settings ## -------------------------------------------------------------------
 
 -- focus follows the mouse pointer
-myFocusFollowsMouse 	:: Bool
-myFocusFollowsMouse 	= True
+myFocusFollowsMouse :: Bool
+myFocusFollowsMouse = True
 
 -- clicking on a window to focus
-myClickJustFocuses 		:: Bool
-myClickJustFocuses 		= False
+myClickJustFocuses :: Bool
+myClickJustFocuses = False
 
 -- Width of the window border in pixels
-myBorderWidth   		= 3
+myBorderWidth = 3
 
 -- Border colors for focused & unfocused windows
-myFocusedBorderColor 	= "#BB553F"
-myNormalBorderColor  	= "#E6DFE0"
+myFocusedBorderColor = "#81A1C1"
+myNormalBorderColor = "#2E3440"
 
 -- modMask : modkey you want to use
 -- mod1Mask : left alt Key
 -- mod4Mask : Windows or Super Key
-myModMask       		= mod4Mask
+myModMask = mod4Mask
 
 -- Workspaces (ewmh)
-myWorkspaces    		= ["1", "2", "3", "4", "5", "6", "7"]
+myWorkspaces = ["1", "2", "3", "4", "5", "6", "7"]
 
 -- ## Key Bindings ## -------------------------------------------------------------------
 myKeys conf@(XConfig {XMonad.modMask = super}) = M.fromList $
 
     -- Close focused window
-    , ((super, 		xK_c), 						kill)
-    , ((super, 		xK_Escape), 				spawn "xkill")
+    [ ((super, xK_c), kill)
+    , ((super, xK_Escape), spawn "xkill")
     
     -- Change gaps on the fly
     , ((super .|. controlMask, 	xK_g), sendMessage $ ToggleGaps)               					-- toggle all gaps
@@ -125,7 +123,10 @@ myKeys conf@(XConfig {XMonad.modMask = super}) = M.fromList $
     , ((super,					xK_period),		sendMessage (IncMasterN (-1)))
 
     -- Restart xmonad
-    , ((super, 						 xK_q),		spawn "xmonad --recompile; xmonad --restart")
+    , ((controlMask .|. shiftMask, 						 xK_r),		spawn "xmonad --recompile; xmonad --restart")
+    
+    -- Quit xmonad
+    , ((controlMask .|. shiftMask, 						 xK_q),		spawn "pkill -KILL -u $USER")
 
     ]
     ++
@@ -216,7 +217,7 @@ defaults = def {
 
       -- hooks, layouts
 		manageHook = myManageHook,
-        layoutHook = gaps [(L,0), (R,0), (U,0), (D,0)] $ spacingRaw False (Border 10 0 10 0) True (Border 0 10 0 10) True $ myLayout,
+        layoutHook = gaps [(L,10), (R,10), (U,50), (D,10)] $ spacingRaw False (Border 10 0 10 0) True (Border 0 10 0 10) True $ myLayout,
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook

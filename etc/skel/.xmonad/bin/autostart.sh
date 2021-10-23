@@ -3,6 +3,9 @@
 # sets wallpaper using feh
 bash $HOME/.xmonad/.fehbg
 
+# polybar
+$HOME/.xmonad/polybar/launch.sh
+
 # Fix cursor
 xsetroot -cursor_name left_ptr
 
