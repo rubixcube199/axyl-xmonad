@@ -183,8 +183,16 @@ myManageHook = composeAll . concat $
     , [title =? t --> doCenterFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
     , [resource =? i --> doIgnore | i <- myIgnores]
+    , [className =? "Alacritty" --> viewShift "1"]
+    , [className =? "Firefox" --> viewShift "2"]
+    , [className =? "Thunar" --> viewShift "3"]
+    , [className =? "Geany" --> viewShift "4"]
+    , [className =? "Inkscape" --> viewShift "5"]
+    , [className =? "vlc" --> viewShift "6"]
+    , [className =? "Xfce4-settings-manager" --> viewShift "7"]
     ]
     where
+                viewShift = doF . liftM2 (.) W.greedyView W.shift
 		myCFloats = ["Viewnior"]
 		myTFloats = ["Downloads", "Save As...", "Getting Started"]
 		myRFloats = []
