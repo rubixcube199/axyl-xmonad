@@ -54,8 +54,8 @@ myKeys conf@(XConfig {XMonad.modMask = super}) = M.fromList $
     , ((super, xK_Escape), spawn "xkill")
     
     -- Change gaps on the fly
-    , ((super .|. controlMask, xK_t), sendMessage $ IncGap 10 L)     -- increment the left-hand gap
-    , ((super .|. shiftMask, xK_t), sendMessage $ DecGap 10 L)     -- decrement the left-hand gap
+    , ((super .|. controlMask, xK_o), sendMessage $ IncGap 10 L)     -- increment the left-hand gap
+    , ((super .|. shiftMask, xK_o), sendMessage $ DecGap 10 L)     -- decrement the left-hand gap
     
     , ((super .|. controlMask, xK_y), sendMessage $ IncGap 10 U)     -- increment the top gap
     , ((super .|. shiftMask, xK_y), sendMessage $ DecGap 10 U)     -- decrement the top gap
@@ -190,7 +190,7 @@ myManageHook = composeAll . concat $
     ]
     where
                 viewShift = doF . liftM2 (.) W.greedyView W.shift
-		myCFloats = ["Viewnior"]
+		myCFloats = ["Viewnior", "Alafloat"]
 		myTFloats = ["Downloads", "Save As...", "Getting Started"]
 		myRFloats = []
 		myIgnores = ["desktop_window"]
