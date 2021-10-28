@@ -37,3 +37,6 @@ fi
 
 # start udiskie
 udiskie &
+
+# replace neovim colorscheme
+sed -i "s/theme =.*$/theme = \"norchad\",/g" $HOME/.config/nvim/lua/chadrc.lua
