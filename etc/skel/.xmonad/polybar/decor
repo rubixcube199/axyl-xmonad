@@ -1,0 +1,28 @@
+[module/spacing]
+type = custom/text
+content = " "
+content-background = ${color.background}
+
+[module/LD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.background}
+content-foreground = ${color.black}
+
+[module/RD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.background}
+content-foreground = ${color.black}
+
+[module/LLD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.background}
+content-foreground = ${color.blue}
+
+[module/RRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.background}
+content-foreground = ${color.blue}

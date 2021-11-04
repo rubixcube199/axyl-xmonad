@@ -15,6 +15,7 @@
 include-file = ~/.xmonad/polybar/modules
 include-file = ~/.xmonad/polybar/colors
 include-file = ~/.xmonad/polybar/system
+include-file = ~/.xmonad/polybar/decor
 
 ;  _                    
 ; | |__   __ _ _ __  
@@ -25,7 +26,7 @@ include-file = ~/.xmonad/polybar/system
 [bar/bar]
 enable-ipc=true
 
-height = 35
+height = 24
 width = 98%
 
 font-0 = Source Code Pro Medium:size=10;2
@@ -47,9 +48,9 @@ line-size = 2
 
 padding=1
 
-modules-left =   launcher sep cpu memory filesystem 
+modules-left =   LLD launcher RRD sep LD cpu RD spacing LD memory RD spacing LD filesystem RD 
 modules-center = workspaces
-modules-right =  battery sep backlight volume sep time
+modules-right =  LD backlight RD spacing LD alsa RD sep LD battery RD sep LD time RD
 
 scroll-up = bspwn-wsnext 
 scroll-down = bspwn-wsprev

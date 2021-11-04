@@ -74,9 +74,6 @@ myKeys conf@(XConfig {XMonad.modMask = super}) = M.fromList $
     -- Move focus to the master window
     , ((super, xK_m), windows W.focusMaster)
 
-    -- Swap the focused window and the master window
-    , ((super, xK_s), windows W.swapMaster)
-
     -- Push window back into tiling
     , ((super, xK_t), withFocused $ windows . W.sink)
 
