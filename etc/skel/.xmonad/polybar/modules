@@ -36,9 +36,7 @@ type = internal/backlight
 
 ; Use the following command to list available cards:
 ; $ ls -1 /sys/class/backlight/
-;card = ${system.graphics_card}
-;card = amdgpu_bl0
-card = amdgpu_bl1
+card = ${system.graphics_card}
 
 enable-scroll = true
 
@@ -293,10 +291,8 @@ adapter = ${system.adapter}
 poll-interval = 2
 time-format = %H:%M
 
-format-charging = <animation-charging> <label-charging>
-format-charging-prefix = 
-
-format-discharging = <ramp-capacity> <label-discharging>
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
 
 format-full = <label-full>
 format-full-prefix = " "
@@ -312,20 +308,20 @@ label-charging-background = ${color.black}
 label-discharging-background = ${color.black}
 label-full-background = ${color.black}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
 ramp-capacity-font = 2
 ramp-capacity-background = ${color.black}
 ramp-capacity-foreground = ${color.cyan}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-3 = " "
+animation-charging-4 = " "
 animation-charging-font = 2
 animation-charging-background = ${color.black}
 animation-charging-foreground = ${color.green}
