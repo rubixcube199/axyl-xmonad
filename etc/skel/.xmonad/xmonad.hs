@@ -134,10 +134,10 @@ myKeys conf@(XConfig {XMonad.modMask = super}) = M.fromList $
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
     ++
 
-    -- mod-{y,u,i}, Switch to physical/Xinerama screens 1, 2, or 3
-    -- mod-shift-{y,u,i}, Move client to screen 1, 2, or 3
+    -- mod-{a,z,x}, Switch to physical/Xinerama screens 1, 2, or 3
+    -- mod-shift-{a,z,x}, Move client to screen 1, 2, or 3
     [((m .|. super, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_y, xK_u, xK_i] [0..]
+        | (key, sc) <- zip [xK_a, xK_z, xK_x] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 -- ## Mouse Bindings ## ------------------------------------------------------------------
