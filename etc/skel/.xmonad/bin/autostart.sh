@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+source colors
+
 # sets wallpaper using feh
 bash $HOME/.xmonad/.fehbg
 
@@ -22,12 +24,14 @@ sxhkd &
 # Launch notification daemon
 dunst \
 -geom "280x50-10+38" -frame_width "1" -font "Source Code Pro Medium 10" \
--lb "#2E3440FF" -lf "#D8DEE9FF" -lfr "#4C566AFF" \
--nb "#2E3440FF" -nf "#D8DEE9FF" -nfr "#4C566AFF" \
--cb "#2E3440FF" -cf "#BF616AFF" -cfr "#BF616AFF" &
+-lb "${bg}FF" -lf "${fg}FF" -lfr "${altbg}FF" \
+-nb "${bg}FF" -nf "${fg}FF" -nfr "${altbg}FF" \
+-cb "${bg}FF" -cf "#BF616AFF" -cfr "#BF616AFF" &
 
 # start compositor and power manager
 xfce4-power-manager &
+
+while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom --config $HOME/.xmonad/picom.conf &
 
 # start polkit
