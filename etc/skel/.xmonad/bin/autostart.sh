@@ -6,7 +6,7 @@ source colors
 bash $HOME/.xmonad/.fehbg
 
 # polybar
-$HOME/.xmonad/polybar/launch.sh
+$HOME/.xmonad/bin/launchbar.sh
 
 # Fix cursor
 xsetroot -cursor_name left_ptr
