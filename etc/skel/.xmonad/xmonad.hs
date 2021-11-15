@@ -35,8 +35,8 @@ myClickJustFocuses = False
 myBorderWidth = 3
 
 -- Border colors for focused & unfocused windows
-myFocusedBorderColor = "#81A1C1"
-myNormalBorderColor = "#3B4252"
+myFocusedBorderColor = "#7daea3"
+myNormalBorderColor = "#928374"
 
 -- modMask : modkey you want to use
 -- mod1Mask : left alt Key
