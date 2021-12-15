@@ -10,7 +10,11 @@ $HOME/.xmonad/bin/launchbar.sh
 xsetroot -cursor_name left_ptr
 
 # kill if already running
-killall -9 picom xfce4-power-manager ksuperkey dunst sxhkd
+killall -9 picom xfce4-power-manager ksuperkey dunst sxhkd eww
+
+# Launch Conkeww
+sed -i "s/colors\/color-.*/colors\/color-gruvbox.yuck\")/g" $HOME/.config/conkeww/eww.yuck
+eww --config $HOME/.config/conkeww/ open conkeww-main
 
 # sets superkey
 ksuperkey -e 'Super_L=Alt_L|F1' &
