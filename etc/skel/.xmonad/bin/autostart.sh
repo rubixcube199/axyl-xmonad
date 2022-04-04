@@ -43,3 +43,7 @@ sed -i "s/theme =.*$/theme = \"gruvchad\",/g" $HOME/.config/nvim/lua/custom/chad
 # change xfce4-terminal colorscheme
 XFCE_TERM_PATH="$HOME/.config/xfce4/terminal"
 cp "$XFCE_TERM_PATH"/colorschemes/gruvbox-material "$XFCE_TERM_PATH"/terminalrc
+
+# change cava colorscheme
+CAVA_PATH="$HOME/.config/cava"
+cp "$CAVA_PATH"/colorschemes/gruvbox-material "$CAVA_PATH"/config
